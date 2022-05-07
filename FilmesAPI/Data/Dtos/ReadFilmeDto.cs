@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace FilmesAPI.Models
+namespace FilmesAPI.Data.Dtos
 {
-    public class Filme
+    public class ReadFilmeDto
     {
         [Key]
         [Required]
@@ -20,6 +16,7 @@ namespace FilmesAPI.Models
         [Range(1, 300, ErrorMessage = "A duração do filme não pode passar de 300 minutos!")]
         public int Duracao { get; set; }
         [Range(1, 10, ErrorMessage = "A nota deve ser de 1 ate 10!")]
-        public int Nota { get; set; }
+        public double Nota { get; set; }
+        public DateTime HoraDaConsulta { get; set; }
     }
 }
